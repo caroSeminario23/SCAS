@@ -1,5 +1,7 @@
 # SISTEMA DE CONVERSIÓN DE AUDIOS (SCAS)
 
+![Menú del programa](images/image1.png)
+
 ## 1. Descripción del proyecto
 SCAS es un programa que convierte archivos en formato m4a en otros (opus y mp3 actualmente) como también los comprime. De esta manera, beneficia la portabilidad del audio y carga en páginas web.
 
