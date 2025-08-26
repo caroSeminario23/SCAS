@@ -1,11 +1,13 @@
-import os
 import ffmpeg
 
+from utils.calcular_tamano import calcular_tamano_archivo
+from utils.resultado_conversion import resultados_conversion
+
 def convertir_m4a_opus(arch_entrada, arch_salida, bitrate="96k"):
-    print("Iniciando conversión de M4A a OPUS...")
+    print("\nIniciando conversión de M4A a OPUS...")
 
     # Tamaño del archivo de entrada en MB
-    tamano_entrada = os.path.getsize(arch_entrada) / (1024*1024)
+    tamano_entrada = calcular_tamano_archivo(arch_entrada)
 
     # Conversión del archivo
     (
@@ -17,8 +19,7 @@ def convertir_m4a_opus(arch_entrada, arch_salida, bitrate="96k"):
     )
 
     # Tamaño del archivo de salida en MB
-    tamano_salida = os.path.getsize(arch_salida) / (1024*1024)
+    tamano_salida = calcular_tamano_archivo(arch_salida)
 
-    print("Conversión completada.")
-    print(f"Archivo de entrada: {arch_entrada} - Peso: {tamano_entrada:.2f} MB")
-    print(f"Archivo de salida: {arch_salida} - Peso: {tamano_salida:.2f} MB")
+    print("\nConversión completada.")
+    resultados_conversion(arch_entrada, arch_salida, tamano_entrada, tamano_salida)
