@@ -1,6 +1,7 @@
 import os
 from m4a_mp3 import convertir_m4a_mp3
 from m4a_opus import convertir_m4a_opus
+from mp4_mp3 import convertir_mp4_mp3
 from mp4opus_mp4mp3 import convertir_m4aopus_mp4mp3
 
 def convertir_entrada(formato):
@@ -15,7 +16,8 @@ def menu():
     print("1. Convertir M4A a OPUS")
     print("2. Convertir M4A a MP3")
     print("3. Convertir MP4(OPUS) a MP4(MP3)")
-    print("4. Salir")
+    print("4. Convertir MP4 a MP3")
+    print("5. Salir")
 
     opcion = input("Seleccione una opción: ")
 
@@ -32,6 +34,10 @@ def menu():
         convertir_m4aopus_mp4mp3(ruta_entrada, ruta_salida)
 
     elif opcion == "4":
+        ruta_entrada, ruta_salida = convertir_entrada("mp3")
+        convertir_mp4_mp3(ruta_entrada, ruta_salida)
+
+    elif opcion == "5":
         print("Saliendo...")
         exit()
 
