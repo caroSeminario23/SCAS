@@ -1,17 +1,11 @@
-import os
+from utils.convertir_entrada import convertir_entrada
 from m4a_mp3 import convertir_m4a_mp3
 from m4a_opus import convertir_m4a_opus
 from mp4_mp3 import convertir_mp4_mp3
 from mp4opus_mp4mp3 import convertir_m4aopus_mp4mp3
 
-def convertir_entrada(formato):
-    archivo = input("\nIngrese la ruta del archivo M4A de entrada: ")
-    ruta_entrada = os.path.normpath(archivo.strip().strip('"'))
-    ruta_salida = os.path.splitext(ruta_entrada)[0] + f"_2.{formato}"
-    return ruta_entrada, ruta_salida
-
 def menu():
-    print("MENU DE OPCIONES")
+    print("\nMENU DE OPCIONES")
     print("=================")
     print("1. Convertir M4A a OPUS")
     print("2. Convertir M4A a MP3")
