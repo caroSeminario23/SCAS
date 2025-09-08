@@ -21,7 +21,7 @@ def convertir_m4aopus_mp4mp3(arch_entrada, arch_salida, bitrate="96k", crf=28, p
         "-b:a", bitrate, #audio_bitrate
         "-acodec", "libmp3lame",
         '-c:v', 'libx264',
-        '-crf', crf,
+        '-crf', str(crf),
         '-preset', preset,
         "-y", arch_salida #overwrite output
     ]
