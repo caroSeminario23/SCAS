@@ -38,7 +38,7 @@ def menu():
             limpiar_pantalla()
         
         elif opcion == "3":
-            ruta_entrada, ruta_salida = convertir_entrada("mp4", "mp3")
+            ruta_entrada, ruta_salida = convertir_entrada("mp4", "mp4")
             convertir_m4aopus_mp4mp3(ruta_entrada, ruta_salida)
             input("\nPresione Enter para continuar...")
             limpiar_pantalla()
