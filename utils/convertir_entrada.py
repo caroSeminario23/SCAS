@@ -3,11 +3,11 @@ import os
 def convertir_entrada(formato_entrada, formato_salida):
     archivo = input(f"\nIngrese la ruta del archivo {formato_entrada} de entrada: ")
 
-    # Validación de entrada
-    if not os.path.isfile(archivo):
-        raise FileNotFoundError(f"No se encontró el archivo: {archivo}")
-
     ruta_entrada = os.path.normpath(archivo.strip().strip('"'))
+
+    # Validación de entrada
+    if not os.path.isfile(ruta_entrada):
+        raise FileNotFoundError(f"No se encontró el archivo: {ruta_entrada}")
 
     if formato_salida == "carpeta":
         ruta_carpeta = os.path.splitext(ruta_entrada)[0]
